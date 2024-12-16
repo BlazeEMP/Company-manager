@@ -1,0 +1,18 @@
+node_modules/
+
+# env
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# windows system files
+[Dd]esktop.ini
+[Tt]humbs.db
+
+# vscode settings
+.vscode/
+
+# dev
+dist/
