@@ -1,9 +1,11 @@
 {
     "compilerOptions": {
-        "target": "ESNext",
-        "module": "commonjs",
+        "target": "es2017",
+        "module": "nodenext",
+        "moduleResolution": "nodenext",
         "strict": true,
         "esModuleInterop": true,
+        "lib": ["ES2017", "DOM", "DOM.Iterable"],
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
         "outDir": "./dist",
@@ -14,4 +16,5 @@
 }
 
 // generated with copilot double check and credit
-// edited target to ESNext
+// edited target to es2017 and module to nodenext with moduleResolution to nodenext,
+// also added lib to include ES2017, DOM, DOM.Iterable
