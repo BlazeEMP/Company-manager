@@ -68,7 +68,7 @@ async function addDepartmentInput() {
 
 async function addRoleInput() {
 	const allDepartments = await queries.viewDepartments();
-	const departmentList = allDepartments.map((department: { id: number, department_name: string }) => ({ name: department.department_name, value: department.id }));
+	const departmentList = allDepartments.map((department: { department_id: number, department_name: string }) => ({ name: department.department_name, value: department.department_id }));
 	const response = await inquirer.
 		prompt([{
 			type: 'input',
@@ -93,8 +93,8 @@ async function addRoleInput() {
 async function addEmployeeInput() {
 	const allRoles = await queries.viewRoles();
 	const allEmployees = await queries.viewEmployees();
-	const roleList = allRoles.map((role: { id: number, title: string }) => ({ name: role.title, value: role.id }));
-	const managerList = allEmployees.map((employee: { id: number, first_name: string, last_name: string }) => ({ name: `${employee.first_name} ${employee.last_name}`, value: employee.id }));
+	const roleList = allRoles.map((role: { role_id: number, role_title: string }) => ({ name: role.role_title, value: role.role_id }));
+	const managerList = allEmployees.map((employee: { employee_id: number, first_name: string, last_name: string }) => ({ name: `${employee.first_name} ${employee.last_name}`, value: employee.employee_id }));
 	// following 2 lines are custom code to allow the user to select no manager
 	var noManager = { name: 'No Manager', value: null as any }; // we let the user select no manager and hide the null value as any to be able to pass it into a number spot that is allowedto be null in the database
 	managerList.push(noManager);
@@ -125,8 +125,8 @@ async function addEmployeeInput() {
 async function updateEmployeeRoleSelection() {
 	const allEmployees = await queries.viewEmployees();
 	const allRoles = await queries.viewRoles();
-	const employeeList = allEmployees.map((employee: { id: number, first_name: string, last_name: string }) => ({ name: `${employee.first_name} ${employee.last_name}`, value: employee.id }));
-	const roleList = allRoles.map((role: { id: number, title: string }) => ({ name: role.title, value: role.id }));
+	const employeeList = allEmployees.map((employee: { employee_id: number, first_name: string, last_name: string }) => ({ name: `${employee.first_name} ${employee.last_name}`, value: employee.employee_id }));
+	const roleList = allRoles.map((role: { role_id: number, role_title: string }) => ({ name: role.role_title, value: role.role_id }));
 	const response = await inquirer.
 		prompt([{
 			type: 'list',
