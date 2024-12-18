@@ -40,7 +40,7 @@
   8.) Last ```npm run start``` should start the index.js file and run the init(); function starting the command line interface
 
   VIDEO WALKTHROUGH:  
-  [Google Drive]()
+  [Google Drive](https://drive.google.com/file/d/1UNVgWh7Y6sR_xXMGqQEcjBL98poF-25I/view?usp=sharing)
 
   ## License
 
